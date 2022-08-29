@@ -13,5 +13,5 @@ struct Product: Identifiable{
     var productName: String
     var barcode: String
     var price: Float
-    var store: Float
+    var store: String
 }
