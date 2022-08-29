@@ -11,6 +11,7 @@
 		8DE67C7728BCD473002E024B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE67C7628BCD473002E024B /* ContentView.swift */; };
 		8DE67C7928BCD482002E024B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DE67C7828BCD482002E024B /* Assets.xcassets */; };
 		8DE67C7C28BCD482002E024B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DE67C7B28BCD482002E024B /* Preview Assets.xcassets */; };
+		8DE67C8328BCD7B5002E024B /* Barcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE67C8228BCD7B5002E024B /* Barcode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		8DE67C7628BCD473002E024B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8DE67C7828BCD482002E024B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DE67C7B28BCD482002E024B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8DE67C8228BCD7B5002E024B /* Barcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barcode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		8DE67C7328BCD473002E024B /* BarcodeChecker */ = {
 			isa = PBXGroup;
 			children = (
+				8DE67C8428BCDE6A002E024B /* Model */,
 				8DE67C7428BCD473002E024B /* BarcodeCheckerApp.swift */,
 				8DE67C7628BCD473002E024B /* ContentView.swift */,
 				8DE67C7828BCD482002E024B /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				8DE67C7B28BCD482002E024B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8DE67C8428BCDE6A002E024B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8DE67C8228BCD7B5002E024B /* Barcode.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				8DE67C7728BCD473002E024B /* ContentView.swift in Sources */,
 				8DE67C7528BCD473002E024B /* BarcodeCheckerApp.swift in Sources */,
+				8DE67C8328BCD7B5002E024B /* Barcode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
