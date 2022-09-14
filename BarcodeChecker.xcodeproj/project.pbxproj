@@ -14,6 +14,7 @@
 		8DE67C8328BCD7B5002E024B /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE67C8228BCD7B5002E024B /* ProductModel.swift */; };
 		8DE67C8728BCE285002E024B /* ProductData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE67C8628BCE285002E024B /* ProductData.swift */; };
 		8DE67C8B28BCEAA0002E024B /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE67C8A28BCEAA0002E024B /* ProductCardView.swift */; };
+		8DE67C8F28BD0E30002E024B /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE67C8E28BD0E30002E024B /* FrameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		8DE67C8228BCD7B5002E024B /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		8DE67C8628BCE285002E024B /* ProductData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductData.swift; sourceTree = "<group>"; };
 		8DE67C8A28BCEAA0002E024B /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
+		8DE67C8E28BD0E30002E024B /* FrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		8DE67C8928BCEA64002E024B /* VIew */ = {
 			isa = PBXGroup;
 			children = (
+				8DE67C8E28BD0E30002E024B /* FrameView.swift */,
 				8DE67C8A28BCEAA0002E024B /* ProductCardView.swift */,
 			);
 			path = VIew;
@@ -178,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DE67C8F28BD0E30002E024B /* FrameView.swift in Sources */,
 				8DE67C7728BCD473002E024B /* ContentView.swift in Sources */,
 				8DE67C7528BCD473002E024B /* BarcodeCheckerApp.swift in Sources */,
 				8DE67C8328BCD7B5002E024B /* ProductModel.swift in Sources */,
@@ -313,6 +317,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BarcodeChecker/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "The app needs camera access to scan barcodes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -341,6 +346,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BarcodeChecker/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "The app needs camera access to scan barcodes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

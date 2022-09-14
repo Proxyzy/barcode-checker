@@ -11,7 +11,7 @@ import SwiftUI
 struct BarcodeCheckerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(product: productsData[0])
+            ProductCardView(product: productsData[1])
         }
     }
 }

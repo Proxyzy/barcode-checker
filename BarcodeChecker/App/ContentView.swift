@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    var product: Product
     var body: some View {
-        Text(product.productName)
+        Text("Hello World")
             .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(product: productsData[0])
+        ContentView()
     }
 }
