@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D72F0D328D29D590067E50D /* SearchSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72F0D228D29D590067E50D /* SearchSelectionView.swift */; };
+		8D72F0D528D9E24D0067E50D /* TextSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72F0D428D9E24D0067E50D /* TextSearchView.swift */; };
 		8DE67C7528BCD473002E024B /* BarcodeCheckerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE67C7428BCD473002E024B /* BarcodeCheckerApp.swift */; };
 		8DE67C7728BCD473002E024B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE67C7628BCD473002E024B /* ContentView.swift */; };
 		8DE67C7928BCD482002E024B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DE67C7828BCD482002E024B /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D72F0D228D29D590067E50D /* SearchSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSelectionView.swift; sourceTree = "<group>"; };
+		8D72F0D428D9E24D0067E50D /* TextSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSearchView.swift; sourceTree = "<group>"; };
 		8DE67C7128BCD473002E024B /* BarcodeChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarcodeChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE67C7428BCD473002E024B /* BarcodeCheckerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeCheckerApp.swift; sourceTree = "<group>"; };
 		8DE67C7628BCD473002E024B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 			children = (
 				8DE67C8E28BD0E30002E024B /* FrameView.swift */,
 				8DE67C8A28BCEAA0002E024B /* ProductCardView.swift */,
+				8D72F0D228D29D590067E50D /* SearchSelectionView.swift */,
+				8D72F0D428D9E24D0067E50D /* TextSearchView.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -185,6 +191,8 @@
 				8DE67C7728BCD473002E024B /* ContentView.swift in Sources */,
 				8DE67C7528BCD473002E024B /* BarcodeCheckerApp.swift in Sources */,
 				8DE67C8328BCD7B5002E024B /* ProductModel.swift in Sources */,
+				8D72F0D328D29D590067E50D /* SearchSelectionView.swift in Sources */,
+				8D72F0D528D9E24D0067E50D /* TextSearchView.swift in Sources */,
 				8DE67C8728BCE285002E024B /* ProductData.swift in Sources */,
 				8DE67C8B28BCEAA0002E024B /* ProductCardView.swift in Sources */,
 			);
