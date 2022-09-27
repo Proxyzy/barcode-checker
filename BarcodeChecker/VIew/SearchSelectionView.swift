@@ -19,9 +19,12 @@ struct SearchSelectionView: View {
                         .padding()
                 }
                 HStack(){
-                    
-                    SearchButtonView(showBarcodeSearch: $showBarcodeSearch, showNameSearch: $showNameSearch, imageName: "magnifyingglass", searchType: "Name")
-                    SearchButtonView(showBarcodeSearch: $showBarcodeSearch, showNameSearch: $showNameSearch, imageName: "barcode.viewfinder", searchType: "Barcode")
+                    NavigationLink(destination: TextSearchView()){
+                        SearchButtonView(imageName: "magnifyingglass", searchType: "Name")
+                    }
+                    NavigationLink(destination: FrameView()){
+                        SearchButtonView(imageName: "barcode.viewfinder", searchType: "Barcode")
+                    }
                 }
                 
             }
@@ -39,26 +42,13 @@ struct SearchSelectionView_Previews: PreviewProvider {
 }
 
 struct SearchButtonView: View{
-    @Binding var showBarcodeSearch: Bool
-    @Binding var showNameSearch: Bool
     var imageName: String
     var searchType: String
     var body: some View{
-        Button(action: {
-            print("\(searchType) search")
-            if searchType == "Name"{
-                showNameSearch = true
-                showBarcodeSearch = false
-            } else{
-                showNameSearch = false
-                showBarcodeSearch = true
-            }
-        }, label: {
-            HStack(){
-                Image(systemName: imageName)
-                Text("\(searchType) Search")
-            }
-        })
+        HStack(){
+            Image(systemName: imageName)
+            Text("\(searchType) Search")
+        }
     }
     
 }
