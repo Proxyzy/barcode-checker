@@ -11,7 +11,7 @@ struct TextSearchView: View {
     @State var oo: [Product] = []
     @State private var searchText = ""
     var body: some View {
-        NavigationView{
+        
             VStack(){
                 Text("Find Product")
                     .font(.title.weight(.bold))
@@ -24,17 +24,16 @@ struct TextSearchView: View {
             .background(LinearGradient(gradient: Gradient(colors: [Color("sand")]), startPoint: .top, endPoint: .bottom))
             .edgesIgnoringSafeArea(.all)
             .navigationTitle("Search")
-        }
-        .searchable(text: $searchText){
-            ForEach(oo) { product in
-                ProductRowView(product: product)
+            .searchable(text: $searchText){
+                ForEach(oo) { product in
+                    ProductRowView(product: product)
+                }
             }
-        }
-        .onChange(of: searchText){ searchText in
-            oo = productsData.filter({ product in
-                product.productName.contains(searchText)
-            })
-        }
+            .onChange(of: searchText){ searchText in
+                oo = productsData.filter({ product in
+                    product.productName.contains(searchText)
+                })
+            }
     }
 }
 
@@ -57,6 +56,8 @@ struct ProductRowView: View{
             }
             Text(product.productName)
         }
+        .edgesIgnoringSafeArea(.all)
+        .background(LinearGradient(gradient: Gradient(colors: [Color("sand")]), startPoint: .top, endPoint: .bottom))
     }
     
 }
