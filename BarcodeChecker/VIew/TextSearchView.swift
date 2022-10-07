@@ -12,28 +12,30 @@ struct TextSearchView: View {
     @State private var searchText = ""
     var body: some View {
         
-            VStack(){
-                Text("Find Product")
-                    .font(.title.weight(.bold))
-                Text("Start searching for product that you would like to find.")
-                    .multilineTextAlignment(.center)
-            }
-            .padding()
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0,  maxHeight: .infinity, alignment: .center)
-            .foregroundColor(.gray)
-            .background(LinearGradient(gradient: Gradient(colors: [Color("sand")]), startPoint: .top, endPoint: .bottom))
-            .edgesIgnoringSafeArea(.all)
-            .navigationTitle("Search")
-            .searchable(text: $searchText){
+        VStack(){
+            Text("Find Product")
+                .font(.title.weight(.bold))
+            Text("Start searching for product that you would like to find.")
+                .multilineTextAlignment(.center)
+            List(){
                 ForEach(oo) { product in
                     ProductRowView(product: product)
                 }
             }
-            .onChange(of: searchText){ searchText in
-                oo = productsData.filter({ product in
-                    product.productName.contains(searchText)
-                })
-            }
+            .background(Color("sand"))
+        }
+        .padding()
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0,  maxHeight: .infinity, alignment: .center)
+        .foregroundColor(.gray)
+        .background(LinearGradient(gradient: Gradient(colors: [Color("sand")]), startPoint: .top, endPoint: .bottom))
+        .edgesIgnoringSafeArea(.all)
+        .navigationTitle("Search")
+        .searchable(text: $searchText)
+        .onChange(of: searchText){ searchText in
+            oo = productsData.filter({ product in
+                product.productName.contains(searchText)
+            })
+        }
     }
 }
 
@@ -61,3 +63,5 @@ struct ProductRowView: View{
     }
     
 }
+
+

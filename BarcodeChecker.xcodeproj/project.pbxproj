@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D25652728F03D1400EE1690 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 8D25652628F03D1400EE1690 /* CodeScanner */; };
+		8D25652928F03E1B00EE1690 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25652828F03E1B00EE1690 /* ProductView.swift */; };
 		8D72F0D328D29D590067E50D /* SearchSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72F0D228D29D590067E50D /* SearchSelectionView.swift */; };
 		8D72F0D528D9E24D0067E50D /* TextSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72F0D428D9E24D0067E50D /* TextSearchView.swift */; };
 		8DE67C7528BCD473002E024B /* BarcodeCheckerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE67C7428BCD473002E024B /* BarcodeCheckerApp.swift */; };
@@ -20,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D25652828F03E1B00EE1690 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		8D72F0D228D29D590067E50D /* SearchSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSelectionView.swift; sourceTree = "<group>"; };
 		8D72F0D428D9E24D0067E50D /* TextSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSearchView.swift; sourceTree = "<group>"; };
 		8DE67C7128BCD473002E024B /* BarcodeChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarcodeChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D25652728F03D1400EE1690 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +117,7 @@
 				8DE67C8A28BCEAA0002E024B /* ProductCardView.swift */,
 				8D72F0D228D29D590067E50D /* SearchSelectionView.swift */,
 				8D72F0D428D9E24D0067E50D /* TextSearchView.swift */,
+				8D25652828F03E1B00EE1690 /* ProductView.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -133,6 +138,9 @@
 			dependencies = (
 			);
 			name = BarcodeChecker;
+			packageProductDependencies = (
+				8D25652628F03D1400EE1690 /* CodeScanner */,
+			);
 			productName = BarcodeChecker;
 			productReference = 8DE67C7128BCD473002E024B /* BarcodeChecker.app */;
 			productType = "com.apple.product-type.application";
@@ -161,6 +169,9 @@
 				Base,
 			);
 			mainGroup = 8DE67C6828BCD473002E024B;
+			packageReferences = (
+				8D25652528F03D1400EE1690 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 8DE67C7228BCD473002E024B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -188,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DE67C8F28BD0E30002E024B /* FrameView.swift in Sources */,
+				8D25652928F03E1B00EE1690 /* ProductView.swift in Sources */,
 				8DE67C7728BCD473002E024B /* ContentView.swift in Sources */,
 				8DE67C7528BCD473002E024B /* BarcodeCheckerApp.swift in Sources */,
 				8DE67C8328BCD7B5002E024B /* ProductModel.swift in Sources */,
@@ -401,6 +413,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8D25652528F03D1400EE1690 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8D25652628F03D1400EE1690 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D25652528F03D1400EE1690 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8DE67C6928BCD473002E024B /* Project object */;
 }

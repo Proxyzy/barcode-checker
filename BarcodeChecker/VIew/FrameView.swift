@@ -6,17 +6,33 @@
 //
 
 import SwiftUI
+import CodeScanner
 
 struct FrameView: View {
-    var image: CGImage?
-    private let label = Text("Frame")
-    var body: some View {
-        if let image = image {
-            Image(image, scale: 1.0, orientation: .up, label: label)
-        } else {
-            Color.black
+    @State private var isPresentingScanner = false
+        @State private var scannedCode: String?
+
+        var body: some View {
+            VStack(spacing: 10) {
+                if let scannedCode = scannedCode{
+                    NavigationLink("Next page", destination: ProductView(code: scannedCode), isActive: .constant(true)).hidden()
+                }
+
+                Button("Scan Code") {
+                    isPresentingScanner = true
+                }
+
+                Text("Scan a QR code to begin")
+            }
+            .sheet(isPresented: $isPresentingScanner) {
+                CodeScannerView(codeTypes: [.qr]) { response in
+                    if case let .success(result) = response {
+                        scannedCode = result.string
+                        isPresentingScanner = false
+                    }
+                }
+            }
         }
-    }
 }
 
 struct FrameView_Previews: PreviewProvider {
@@ -24,3 +40,5 @@ struct FrameView_Previews: PreviewProvider {
         FrameView()
     }
 }
+
+
