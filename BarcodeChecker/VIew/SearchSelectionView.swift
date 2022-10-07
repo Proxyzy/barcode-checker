@@ -17,6 +17,7 @@ struct SearchSelectionView: View {
                     Text("Select your search")
                         .font(.system(size: 45))
                         .padding()
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 HStack(){
                     NavigationLink(destination: TextSearchView()){
@@ -32,6 +33,7 @@ struct SearchSelectionView: View {
             .background(LinearGradient(gradient: Gradient(colors: [Color("sand")]), startPoint: .top, endPoint: .bottom))
             .edgesIgnoringSafeArea(.all)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
