@@ -12,7 +12,7 @@ struct Product: Identifiable{
     var id = UUID()
     var productName: String
     var barcode: String
-    var price: Float
+    var price: [Float]
     var store: String
     var productImage: String
 }

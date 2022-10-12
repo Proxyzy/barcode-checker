@@ -9,28 +9,27 @@ import SwiftUI
 import CodeScanner
 
 struct FrameView: View {
-    @State private var isPresentingScanner = false
         @State private var scannedCode: String?
 
         var body: some View {
             VStack(spacing: 10) {
                 if let scannedCode = scannedCode{
-                    NavigationLink("Next page", destination: ProductView(code: scannedCode), isActive: .constant(true)).hidden()
-                }
-
-                Button("Scan Code") {
-                    isPresentingScanner = true
-                }
-
-                Text("Scan a QR code to begin")
-            }
-            .sheet(isPresented: $isPresentingScanner) {
-                CodeScannerView(codeTypes: [.qr]) { response in
-                    if case let .success(result) = response {
-                        scannedCode = result.string
-                        isPresentingScanner = false
+                    let contains = productsData.contains(where: {$0.barcode == scannedCode})
+                    if contains{
+                        NavigationLink("Next page", destination: ProductCardView(product: productsData.first(where: {$0.barcode == scannedCode}) ?? productsData[1]), isActive: .constant(true)).hidden()
+                    }
+                    else{
+                        NavigationLink("Next page", destination: ProductView(code: scannedCode), isActive: .constant(true)).hidden()
                     }
                 }
+                CodeScannerView(codeTypes: [.upce,.ean13,.code128,.code39,.codabar,.qr]) { response in
+                    if case let .success(result) = response {
+                        scannedCode = result.string
+                    
+                    }
+                }
+                .ignoresSafeArea()
+            
             }
         }
 }

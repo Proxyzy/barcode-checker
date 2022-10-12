@@ -26,39 +26,39 @@ struct ProductCardView: View {
                 .font(.system(size: 60))
             HStack(){
                 VStack(){
-                    Image("maxima")
+                    Image(storeData[0].storeImage)
                         .resizable()
                         .frame(width: 100, height: 100)
-                    Text("1.20")
+                    Text(String(format: "%.2f", product.price[0]))
                         .font(.system(size: 60))
                 }
                 VStack(){
-                    Image("norfa")
+                    Image(storeData[1].storeImage)
                         .resizable()
                         .frame(width: 100, height: 100)
-                    Text("1.20")
+                    Text(String(format: "%.2f", product.price[1]))
                         .font(.system(size: 60))
                 }
                 VStack(){
-                    Image("iki")
+                    Image(storeData[2].storeImage)
                         .resizable()
                         .frame(width: 100, height: 100)
-                    Text("1.20")
+                    Text(String(format: "%.2f", product.price[2]))
                         .font(.system(size: 60))
                 }
                 VStack(){
-                    Image("lidl")
+                    Image(storeData[3].storeImage)
                         .resizable()
                         .frame(width: 100, height: 100)
-                    Text("1.20")
+                    Text(String(format: "%.2f", product.price[3]))
                         .font(.system(size: 60))
                 }
                 VStack(){
-                    Image("rimi")
+                    Image(storeData[4].storeImage)
                         .resizable()
                         .frame(width: 100, height: 100)
                         .cornerRadius(60)
-                    Text("1.20")
+                    Text(String(format: "%.2f", product.price[4]))
                         .font(.system(size: 60))
                 }
             }
@@ -77,3 +77,5 @@ struct ProductCardView_Previews: PreviewProvider {
         ProductCardView(product: productsData[1])
     }
 }
+
+
