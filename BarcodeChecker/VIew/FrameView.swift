@@ -9,29 +9,54 @@ import SwiftUI
 import CodeScanner
 
 struct FrameView: View {
-        @State private var scannedCode: String?
-
-        var body: some View {
-            VStack(spacing: 10) {
-                if let scannedCode = scannedCode{
-                    let contains = productsData.contains(where: {$0.barcode == scannedCode})
-                    if contains{
-                        NavigationLink("Next page", destination: ProductCardView(product: productsData.first(where: {$0.barcode == scannedCode}) ?? productsData[1]), isActive: .constant(true)).hidden()
-                    }
-                    else{
-                        NavigationLink("Next page", destination: ProductView(code: scannedCode), isActive: .constant(true)).hidden()
-                    }
-                }
-                CodeScannerView(codeTypes: [.upce,.ean13,.code128,.code39,.codabar,.qr]) { response in
-                    if case let .success(result) = response {
-                        scannedCode = result.string
-                    
-                    }
-                }
-                .ignoresSafeArea()
+    
+    enum ProductState {
+        case notFound(code: String)
+        case product(product: Product)
+    }
+    
+    @State private var scannedCode: String?
+    @State private var showProductScreen = false
+    @State private var showProductNotFoundScreen = false
+    @State private var productState: ProductState?
+    
+    var body: some View {
             
+        if let productState = productState {
+            switch productState {
+            case .notFound(let code):
+                NavigationLink(destination: ProductView(code: code),
+                               isActive: $showProductNotFoundScreen,
+                               label: {})
+            case .product(let product):
+                NavigationLink(destination: ProductCardView(product: product),
+                               isActive: $showProductScreen,
+                               label: {})
             }
         }
+        
+        CodeScannerView(codeTypes: [.upce, .ean13, .code128, .code39, .codabar, .qr]) { response in
+            switch response {
+            case .success(let result):
+                scannedCode = result.string
+                searchForProduct(barcode: result.string)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        .ignoresSafeArea()
+    }
+    
+    func searchForProduct(barcode: String) {
+        guard let product = productsData.first(where: { $0.barcode == scannedCode }) else {
+            showProductNotFoundScreen = true
+            productState = .notFound(code: barcode)
+            return
+        }
+        
+        showProductScreen = true
+        productState = .product(product: product)
+    }
 }
 
 struct FrameView_Previews: PreviewProvider {

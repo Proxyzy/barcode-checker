@@ -20,9 +20,9 @@ struct TextSearchView: View {
             List(){
                 ForEach(oo) { product in
                     ProductRowView(product: product)
+                        
                 }
             }
-            .background(Color("sand"))
         }
         .padding()
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0,  maxHeight: .infinity, alignment: .center)
@@ -33,7 +33,8 @@ struct TextSearchView: View {
         .searchable(text: $searchText)
         .onChange(of: searchText){ searchText in
             oo = productsData.filter({ product in
-                product.productName.contains(searchText)
+                product.productName.contains(searchText) ||
+                product.barcode.contains(searchText)
             })
         }
     }
@@ -49,17 +50,19 @@ struct ProductRowView: View{
     var product: Product
     var body: some View{
         HStack{
-            AsyncImage(url: URL(string: product.productImage)){
-                image in image
-                    .resizable()
-                    .scaledToFit()
-            } placeholder: {
-                ProgressView()
+            NavigationLink(destination: ProductCardView(product: product)){
+                AsyncImage(url: URL(string: product.productImage)){
+                    image in image
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                } placeholder: {
+                    ProgressView()
+                }
+                Text(product.productName)
+                    .font(.system(size: 30))
             }
-            Text(product.productName)
         }
         .edgesIgnoringSafeArea(.all)
-        .background(LinearGradient(gradient: Gradient(colors: [Color("sand")]), startPoint: .top, endPoint: .bottom))
     }
     
 }

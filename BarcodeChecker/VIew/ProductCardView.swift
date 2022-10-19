@@ -17,50 +17,24 @@ struct ProductCardView: View {
             AsyncImage(url: URL(string: product.productImage)){
                 image in image
                     .resizable()
-                    .scaledToFit()
+                    .frame(width: 200, height: 200)
             } placeholder: {
                 ProgressView()
             }
-                
+            
             Text(product.productName)
                 .font(.system(size: 60))
             HStack(){
-                VStack(){
-                    Image(storeData[0].storeImage)
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                    Text(String(format: "%.2f", product.price[0]))
-                        .font(.system(size: 60))
-                }
-                VStack(){
-                    Image(storeData[1].storeImage)
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                    Text(String(format: "%.2f", product.price[1]))
-                        .font(.system(size: 60))
-                }
-                VStack(){
-                    Image(storeData[2].storeImage)
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                    Text(String(format: "%.2f", product.price[2]))
-                        .font(.system(size: 60))
-                }
-                VStack(){
-                    Image(storeData[3].storeImage)
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                    Text(String(format: "%.2f", product.price[3]))
-                        .font(.system(size: 60))
-                }
-                VStack(){
-                    Image(storeData[4].storeImage)
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                        .cornerRadius(60)
-                    Text(String(format: "%.2f", product.price[4]))
-                        .font(.system(size: 60))
-                }
+                ProductDisplayView(product: product)
+                
+                //                VStack(){
+                //                    Image(storeData[4].storeImage)
+                //                        .resizable()
+                //                        .frame(width: 100, height: 100)
+                //                        .cornerRadius(60)
+                //                    Text(String(format: "%.2f", product.price[4]))
+                //                        .font(.system(size: 60))
+                //                }
             }
             
         }
@@ -79,3 +53,24 @@ struct ProductCardView_Previews: PreviewProvider {
 }
 
 
+struct ProductDisplayView: View{
+    var product: Product
+    
+    var body: some View{
+        VStack(){
+            ForEach(product.price){ price in
+                
+            }
+            ForEach(product.price){ price in
+                HStack(){
+                    Image(storeData[price.storeID].storeImage)
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .cornerRadius(60)
+                    Text("€"+String(format: "%.2f", price.price))
+                        .font(.system(size: 60))
+                }
+            }
+        }
+    }
+}

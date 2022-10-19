@@ -8,8 +8,8 @@
 import SwiftUI
 
 
-struct Store: Identifiable{
-    var id = UUID()
+struct Store: Identifiable {
+    var id: String {storeName}
     var storeName: String
     var storeImage: String
 }

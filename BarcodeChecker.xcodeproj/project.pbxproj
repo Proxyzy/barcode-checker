@@ -11,6 +11,7 @@
 		8D25652928F03E1B00EE1690 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25652828F03E1B00EE1690 /* ProductView.swift */; };
 		8D25652B28F62C3400EE1690 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25652A28F62C3300EE1690 /* StoreModel.swift */; };
 		8D25652D28F62C6400EE1690 /* StoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25652C28F62C6400EE1690 /* StoreData.swift */; };
+		8D25652F28FD88B700EE1690 /* ProductStoreLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25652E28FD88B600EE1690 /* ProductStoreLink.swift */; };
 		8D72F0D328D29D590067E50D /* SearchSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72F0D228D29D590067E50D /* SearchSelectionView.swift */; };
 		8D72F0D528D9E24D0067E50D /* TextSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72F0D428D9E24D0067E50D /* TextSearchView.swift */; };
 		8DE67C7528BCD473002E024B /* BarcodeCheckerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE67C7428BCD473002E024B /* BarcodeCheckerApp.swift */; };
@@ -27,6 +28,7 @@
 		8D25652828F03E1B00EE1690 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		8D25652A28F62C3300EE1690 /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		8D25652C28F62C6400EE1690 /* StoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreData.swift; sourceTree = "<group>"; };
+		8D25652E28FD88B600EE1690 /* ProductStoreLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStoreLink.swift; sourceTree = "<group>"; };
 		8D72F0D228D29D590067E50D /* SearchSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSelectionView.swift; sourceTree = "<group>"; };
 		8D72F0D428D9E24D0067E50D /* TextSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSearchView.swift; sourceTree = "<group>"; };
 		8DE67C7128BCD473002E024B /* BarcodeChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarcodeChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 			children = (
 				8DE67C8228BCD7B5002E024B /* ProductModel.swift */,
 				8D25652A28F62C3300EE1690 /* StoreModel.swift */,
+				8D25652E28FD88B600EE1690 /* ProductStoreLink.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DE67C8F28BD0E30002E024B /* FrameView.swift in Sources */,
+				8D25652F28FD88B700EE1690 /* ProductStoreLink.swift in Sources */,
 				8D25652928F03E1B00EE1690 /* ProductView.swift in Sources */,
 				8DE67C7728BCD473002E024B /* ContentView.swift in Sources */,
 				8DE67C7528BCD473002E024B /* BarcodeCheckerApp.swift in Sources */,
