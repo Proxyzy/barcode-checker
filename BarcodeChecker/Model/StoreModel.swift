@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct Store: Identifiable {
-    var id: String {storeName}
-    var storeName: String
-    var storeImage: String
+    let id: String
+    let storeName: String
+    let storeImage: String
 }

@@ -25,7 +25,7 @@ struct FrameView: View {
         if let productState = productState {
             switch productState {
             case .notFound(let code):
-                NavigationLink(destination: ProductView(code: code),
+                NavigationLink(destination: ProductNotFoundView(code: code),
                                isActive: $showProductNotFoundScreen,
                                label: {})
             case .product(let product):

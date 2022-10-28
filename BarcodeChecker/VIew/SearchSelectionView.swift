@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct SearchSelectionView: View {
-    @State var showBarcodeSearch = false
-    @State var showNameSearch = false
     var body: some View {
         NavigationView{
             VStack(){

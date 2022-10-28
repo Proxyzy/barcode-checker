@@ -8,7 +8,6 @@
 import Foundation
 
 struct ProductStoreLink: Identifiable {
-    var id = UUID()
-    var storeID: Int
-    var price: Float
+    let id: String
+    let price: Float
 }

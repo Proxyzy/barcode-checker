@@ -8,43 +8,51 @@
 import SwiftUI
 
 struct ProductCardView: View {
-    // - PROPERTIES
-    var product: Product
     
-    // - BODY
+    private let product: Product
+    
+    init(product: Product){
+        self.product = product
+    }
+    
+    
+    
     var body: some View {
-        VStack(spacing: 20){
-            AsyncImage(url: URL(string: product.productImage)){
-                image in image
-                    .resizable()
-                    .frame(width: 200, height: 200)
-            } placeholder: {
-                ProgressView()
-            }
-            
-            Text(product.productName)
-                .font(.system(size: 60))
-            HStack(){
-                ProductDisplayView(product: product)
+        ScrollView{
+            VStack(spacing: 20){
+                AsyncImage(url: URL(string: product.productImage)){
+                    image in image
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                } placeholder: {
+                    ProgressView()
+                }
                 
-                //                VStack(){
-                //                    Image(storeData[4].storeImage)
-                //                        .resizable()
-                //                        .frame(width: 100, height: 100)
-                //                        .cornerRadius(60)
-                //                    Text(String(format: "%.2f", product.price[4]))
-                //                        .font(.system(size: 60))
-                //                }
+                Text(product.productName)
+                    .font(.system(size: 60))
+                HStack(){
+                    ProductDisplayView(product: product)
+                }
+                
             }
-            
+            .padding()
+            .frame(minWidth: 0,
+                   maxWidth: .infinity,
+                   minHeight: 0,
+                   maxHeight: .infinity,
+                   alignment: .center)
+            .background(LinearGradient(gradient: Gradient(colors: [.sand]), startPoint: .top,
+                endPoint: .bottom))
+            .edgesIgnoringSafeArea(.all)
         }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0,  maxHeight: .infinity, alignment: .center)
-        .background(LinearGradient(gradient: Gradient(colors: [Color("sand")]), startPoint: .top, endPoint: .bottom))
+        .padding(.top)
+        .background(LinearGradient(gradient: Gradient(colors: [.sand]), startPoint: .top,
+            endPoint: .bottom))
         .edgesIgnoringSafeArea(.all)
+        
+        
     }
 }
-
-// - PREVIEW
 
 struct ProductCardView_Previews: PreviewProvider {
     static var previews: some View {
@@ -58,16 +66,17 @@ struct ProductDisplayView: View{
     
     var body: some View{
         VStack(){
-            ForEach(product.price){ price in
-                
-            }
-            ForEach(product.price){ price in
+            ForEach(product.stores){ store in
                 HStack(){
-                    Image(storeData[price.storeID].storeImage)
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                        .cornerRadius(60)
-                    Text("€"+String(format: "%.2f", price.price))
+                    
+                    if let storeImage = storeData
+                        .first(where: {$0.id == store.id})?.storeImage {
+                        Image(storeImage)
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .cornerRadius(60)
+                    }
+                    Text("€"+String(format: "%.2f", store.price))
                         .font(.system(size: 60))
                 }
             }

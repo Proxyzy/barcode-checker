@@ -8,36 +8,73 @@
 import SwiftUI
 
 struct TextSearchView: View {
-    @State var oo: [Product] = []
+    
+    @State private var products: [Product] = []
     @State private var searchText = ""
-    var body: some View {
-        
-        VStack(){
-            Text("Find Product")
-                .font(.title.weight(.bold))
-            Text("Start searching for product that you would like to find.")
-                .multilineTextAlignment(.center)
-            List(){
-                ForEach(oo) { product in
-                    ProductRowView(product: product)
-                        
-                }
-            }
-        }
-        .padding()
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0,  maxHeight: .infinity, alignment: .center)
-        .foregroundColor(.gray)
-        .background(LinearGradient(gradient: Gradient(colors: [Color("sand")]), startPoint: .top, endPoint: .bottom))
-        .edgesIgnoringSafeArea(.all)
-        .navigationTitle("Search")
-        .searchable(text: $searchText)
-        .onChange(of: searchText){ searchText in
-            oo = productsData.filter({ product in
-                product.productName.contains(searchText) ||
-                product.barcode.contains(searchText)
-            })
-        }
+    
+    init() {
+        UITableView.appearance().backgroundColor = .clear
     }
+    
+    var body: some View {
+        VStack(){
+            HStack{
+                Image(systemName: "magnifyingglass")
+                TextField(
+                    "Username",
+                    text: $searchText
+                )
+            }
+            .padding(10)
+            .background(.white)
+            .cornerRadius(5)
+            .shadow(color: .red, radius: 10)
+            
+            List{
+                ForEach(products) { product in
+                                    ProductRowView(product: product)
+                
+                                }
+            }
+
+
+        }
+        .background(LinearGradient(gradient: Gradient(colors: [.sand]), startPoint: .top, endPoint: .bottom))
+        .onChange(of: searchText){ searchText in
+                    searchTextChanged(searchText)
+                }
+        
+//        VStack(){
+//            Text("Find Product")
+//                .font(.title.weight(.bold))
+//            Text("Start searching for product that you would like to find.")
+//                .multilineTextAlignment(.center)
+//            List(){
+//                ForEach(products) { product in
+//                    ProductRowView(product: product)
+//
+//                }
+//            }
+//        }
+//        .padding()
+//        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0,  maxHeight: .infinity, alignment: .center)
+//        .foregroundColor(.gray)
+//        .background(LinearGradient(gradient: Gradient(colors: [Color("sand")]), startPoint: .top, endPoint: .bottom))
+//        .edgesIgnoringSafeArea(.all)
+//        .navigationTitle("Search")
+//        .searchable(text: $searchText)
+//        .onChange(of: searchText){ searchText in
+//            searchTextChanged(searchText)
+//        }
+    }
+    
+    func searchTextChanged(_ text: String){
+        products = productsData.filter({ product in
+            product.productName.contains(searchText) ||
+            product.barcode.contains(searchText)
+        })
+    }
+    
 }
 
 struct TextSearchVieW_Previews: PreviewProvider {
@@ -45,26 +82,4 @@ struct TextSearchVieW_Previews: PreviewProvider {
         TextSearchView()
     }
 }
-
-struct ProductRowView: View{
-    var product: Product
-    var body: some View{
-        HStack{
-            NavigationLink(destination: ProductCardView(product: product)){
-                AsyncImage(url: URL(string: product.productImage)){
-                    image in image
-                        .resizable()
-                        .frame(width: 200, height: 200)
-                } placeholder: {
-                    ProgressView()
-                }
-                Text(product.productName)
-                    .font(.system(size: 30))
-            }
-        }
-        .edgesIgnoringSafeArea(.all)
-    }
-    
-}
-
 
