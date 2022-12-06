@@ -9,46 +9,38 @@ import SwiftUI
 
 struct SearchSelectionView: View {
     var body: some View {
-        NavigationView{
+//        NavigationView{
             VStack(){
-                HStack(){
-                    Text("Select your search")
-                        .font(.system(size: 45))
-                        .padding()
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-                HStack(){
-                    NavigationLink(destination: TextSearchView()){
-                        SearchButtonView(imageName: "magnifyingglass", searchType: "Name")
+                TabView{
+                    NavigationView{
+                        TextSearchView()
+                            .navigationTitle("Text Search")
                     }
-                    NavigationLink(destination: FrameView()){
-                        SearchButtonView(imageName: "barcode.viewfinder", searchType: "Barcode")
+                    .navigationViewStyle(StackNavigationViewStyle())
+                    .tabItem{
+                        Label("Text Search", systemImage: "magnifyingglass")
                     }
+                    .tag(1)
+                        
+                    FrameView()
+                        
+                        .tabItem{
+                            Label("Scan Search", systemImage: "barcode.viewfinder")
+                        }
+                        .tag(2)
+                    InformationView()
+                        .navigationTitle("Information")
+                        .tabItem{
+                            Label("How to Use", systemImage: "gearshape")
+                        }
+                        .tag(3)
                 }
                 
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0,  maxHeight: .infinity, alignment: .center)
             .background(LinearGradient(gradient: Gradient(colors: [Color("sand")]), startPoint: .top, endPoint: .bottom))
             .edgesIgnoringSafeArea(.all)
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
+//        }
+//        .navigationViewStyle(StackNavigationViewStyle())
     }
-}
-
-struct SearchSelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchSelectionView()
-    }
-}
-
-struct SearchButtonView: View{
-    var imageName: String
-    var searchType: String
-    var body: some View{
-        HStack(){
-            Image(systemName: imageName)
-            Text("\(searchType) Search")
-        }
-    }
-    
 }

@@ -44,7 +44,6 @@ struct FrameView: View {
                 print(error.localizedDescription)
             }
         }
-        .ignoresSafeArea()
     }
     
     func searchForProduct(barcode: String) {

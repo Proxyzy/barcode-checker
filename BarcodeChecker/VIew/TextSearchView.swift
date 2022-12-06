@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TextSearchView: View {
     
-    @State private var products: [Product] = []
+    @State private var products: [Product] = productsData
     @State private var searchText = ""
     
     init() {
@@ -19,16 +19,19 @@ struct TextSearchView: View {
     var body: some View {
         VStack(){
             HStack{
-                Image(systemName: "magnifyingglass")
-                TextField(
-                    "Username",
-                    text: $searchText
-                )
+                HStack{
+                    Image(systemName: "magnifyingglass")
+                    TextField(
+                        "Search",
+                        text: $searchText
+                    )
+                }
+                .padding(10)
+                .background(.white)
+                .cornerRadius(5)
             }
-            .padding(10)
-            .background(.white)
-            .cornerRadius(5)
-            .shadow(color: .red, radius: 10)
+            .padding(15)
+            
             
             List{
                 ForEach(products) { product in
@@ -69,10 +72,15 @@ struct TextSearchView: View {
     }
     
     func searchTextChanged(_ text: String){
-        products = productsData.filter({ product in
-            product.productName.contains(searchText) ||
-            product.barcode.contains(searchText)
-        })
+        if searchText.isEmpty{
+            products = productsData
+        }
+        else{
+            products = productsData.filter({ product in
+                product.productName.contains(searchText) ||
+                product.barcode.contains(searchText)
+            })
+        }
     }
     
 }
