@@ -21,19 +21,15 @@ struct SearchSelectionView: View {
                         Label("Text Search", systemImage: "magnifyingglass")
                     }
                     .tag(1)
-                        
-                    FrameView()
-                        
-                        .tabItem{
-                            Label("Scan Search", systemImage: "barcode.viewfinder")
-                        }
+                    NavigationView{
+                        FrameView()
+                            .navigationTitle("Barcode Scan Search")
+                    }
+                    .navigationViewStyle(StackNavigationViewStyle())
+                    .tabItem{
+                        Label("Scan Search", systemImage: "barcode.viewfinder")
+                    }
                         .tag(2)
-                    InformationView()
-                        .navigationTitle("Information")
-                        .tabItem{
-                            Label("How to Use", systemImage: "gearshape")
-                        }
-                        .tag(3)
                 }
                 
             }

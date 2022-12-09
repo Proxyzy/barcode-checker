@@ -63,7 +63,6 @@ struct ProductCardView_Previews: PreviewProvider {
 
 struct ProductDisplayView: View{
     var product: Product
-    
     var body: some View{
         VStack(){
             ForEach(product.stores){ store in

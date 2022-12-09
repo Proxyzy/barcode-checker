@@ -10,8 +10,8 @@ import SwiftUI
 struct InformationView: View {
     var body: some View {
         VStack{
-            Text("Product with barcode of was not found")
-                .multilineTextAlignment(.center)
+            Text("App used for cheking prices of products in diferent Lithuanian Stores")
+                .multilineTextAlignment(.trailing)
         }
         .background(LinearGradient(gradient: Gradient(colors: [.sand]), startPoint: .top, endPoint: .bottom))
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0,  maxHeight: .infinity, alignment: .center)

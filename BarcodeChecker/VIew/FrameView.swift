@@ -21,6 +21,8 @@ struct FrameView: View {
     @State private var productState: ProductState?
     
     var body: some View {
+        
+        VStack{
             
         if let productState = productState {
             switch productState {
@@ -33,6 +35,7 @@ struct FrameView: View {
                                isActive: $showProductScreen,
                                label: {})
             }
+            
         }
         
         CodeScannerView(codeTypes: [.upce, .ean13, .code128, .code39, .codabar, .qr]) { response in
@@ -43,6 +46,7 @@ struct FrameView: View {
             case .failure(let error):
                 print(error.localizedDescription)
             }
+        }
         }
     }
     
@@ -57,11 +61,3 @@ struct FrameView: View {
         productState = .product(product: product)
     }
 }
-
-struct FrameView_Previews: PreviewProvider {
-    static var previews: some View {
-        FrameView()
-    }
-}
-
-

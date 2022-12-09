@@ -12,8 +12,8 @@ let productsData = [
             barcode: "5000158101616",
             stores:
                 [
-                    ProductStoreLink(id: "1", price: 2.13),
-                    ProductStoreLink(id: "2", price: 2.20),
+                    ProductStoreLink(id: "1", price: 2.39),
+                    ProductStoreLink(id: "2", price: 2.99),
                     ProductStoreLink(id: "3", price: 1.16),
                     ProductStoreLink(id: "4", price: 2.17),
                     ProductStoreLink(id: "5", price: 2.80)
@@ -30,5 +30,180 @@ let productsData = [
                 ProductStoreLink(id: "2", price: 2.17),
                 ProductStoreLink(id: "1", price: 2.80)
             ],
-        productImage: "https://assets.stickpng.com/images/58d2a68cdc164e9dd9e668ee.png")
+        productImage: "https://assets.stickpng.com/images/58d2a68cdc164e9dd9e668ee.png"),
+    Product(
+        productName: "Lion",
+        barcode: "6003326011624",
+        stores:
+            [
+                ProductStoreLink(id: "5", price: 2.13),
+                ProductStoreLink(id: "3", price: 2.20),
+                ProductStoreLink(id: "4", price: 1.16),
+                ProductStoreLink(id: "2", price: 2.17),
+                ProductStoreLink(id: "1", price: 2.80)
+            ],
+        productImage: "https://cdn.barbora.lt/products/90d69571-965c-475e-af62-8f1b232bbdc2_s.png"),
+    Product(
+        productName: "Snickers",
+        barcode: "5000159461122",
+        stores:
+            [
+                ProductStoreLink(id: "5", price: 2.13),
+                ProductStoreLink(id: "3", price: 2.20),
+                ProductStoreLink(id: "4", price: 1.16),
+                ProductStoreLink(id: "2", price: 2.17),
+                ProductStoreLink(id: "1", price: 2.80)
+            ],
+        productImage: "https://cdn.barbora.lt/products/f3da53b0-9fc4-40c7-b7e0-3c69be044ef4_m.png"),
+    Product(
+        productName: "Kit-Kat",
+        barcode: "0000502510946",
+        stores:
+            [
+                ProductStoreLink(id: "5", price: 2.13),
+                ProductStoreLink(id: "3", price: 2.20),
+                ProductStoreLink(id: "4", price: 1.16),
+                ProductStoreLink(id: "2", price: 2.17),
+                ProductStoreLink(id: "1", price: 2.80)
+            ],
+        productImage: "https://cdn.barbora.lt/products/860223f6-74d3-45e5-8e8d-dbae0899cd94_s.png"),
+    Product(
+        productName: "Milkyway",
+        barcode: "040000422068",
+        stores:
+            [
+                ProductStoreLink(id: "5", price: 2.13),
+                ProductStoreLink(id: "3", price: 2.20),
+                ProductStoreLink(id: "4", price: 1.16),
+                ProductStoreLink(id: "2", price: 2.17),
+                ProductStoreLink(id: "1", price: 2.80)
+            ],
+        productImage: "https://cdn.barbora.lt/products/fca4cfca-c9a9-40f6-afc9-2b48ccc32ddb_m.png"),
+    Product(
+        productName: "Kinder Bueno",
+        barcode: "8000500282373",
+        stores:
+            [
+                ProductStoreLink(id: "5", price: 2.13),
+                ProductStoreLink(id: "3", price: 2.20),
+                ProductStoreLink(id: "4", price: 1.16),
+                ProductStoreLink(id: "2", price: 2.17),
+                ProductStoreLink(id: "1", price: 2.80)
+            ],
+        productImage: "https://cdn.barbora.lt/products/b818e89a-9ef2-4cb5-9b35-56bc48044011_m.png"),
+    
+
+    Product(
+        productName: "Manija",
+        barcode: "762221033437",
+        stores:
+            [
+                ProductStoreLink(id: "5", price: 2.13),
+                ProductStoreLink(id: "3", price: 2.20),
+                ProductStoreLink(id: "4", price: 1.16),
+                ProductStoreLink(id: "2", price: 2.17),
+                ProductStoreLink(id: "1", price: 2.80)
+            ],
+        productImage: "https://cdn.barbora.lt/products/0bfbfc8a-7f0b-47bd-9987-b27f1dc43aa3_m.png"),
+    Product(
+        productName: "3Bit",
+        barcode: "5900951286186",
+        stores:
+            [
+                ProductStoreLink(id: "5", price: 2.13),
+                ProductStoreLink(id: "3", price: 2.20),
+                ProductStoreLink(id: "4", price: 1.16),
+                ProductStoreLink(id: "2", price: 2.17),
+                ProductStoreLink(id: "1", price: 2.80)
+            ],
+        productImage: "https://cdn.barbora.lt/products/95390959-7beb-4b79-ab2f-567f1ec0a603_m.png"),
+    Product(
+        productName: "Twix",
+        barcode: "5000159366267",
+        stores:
+            [
+                ProductStoreLink(id: "5", price: 2.13),
+                ProductStoreLink(id: "3", price: 2.20),
+                ProductStoreLink(id: "4", price: 1.16),
+                ProductStoreLink(id: "2", price: 2.17),
+                ProductStoreLink(id: "1", price: 2.80)
+            ],
+        productImage: "https://cdn.barbora.lt/products/d3881273-9c78-44d6-a3a8-ee3a031459ff_m.png"),
+    Product(
+        productName: "Tupla",
+        barcode: "5905703654556",
+        stores:
+            [
+                ProductStoreLink(id: "5", price: 2.13),
+                ProductStoreLink(id: "3", price: 2.20),
+                ProductStoreLink(id: "4", price: 1.16),
+                ProductStoreLink(id: "2", price: 2.17),
+                ProductStoreLink(id: "1", price: 2.80)
+            ],
+        productImage: "https://cdn.barbora.lt/products/c4f54541-cb56-4378-bfa6-fe7a9bba2fb8_m.png"),
+    Product(
+        productName: "Knopers",
+        barcode: "4014400920482",
+        stores:
+            [
+                ProductStoreLink(id: "5", price: 2.13),
+                ProductStoreLink(id: "3", price: 2.20),
+                ProductStoreLink(id: "4", price: 1.16),
+                ProductStoreLink(id: "2", price: 2.17),
+                ProductStoreLink(id: "1", price: 2.80)
+            ],
+        productImage: "https://cdn.barbora.lt/products/049ca5b0-2d7b-4b9f-a35b-6aee9dc34624_m.png"),
+    Product(
+        productName: "Geisha",
+        barcode: "6164004675641",
+        stores:
+            [
+                ProductStoreLink(id: "5", price: 2.13),
+                ProductStoreLink(id: "3", price: 2.20),
+                ProductStoreLink(id: "4", price: 1.16),
+                ProductStoreLink(id: "2", price: 2.17),
+                ProductStoreLink(id: "1", price: 2.80)
+            ],
+        productImage: "https://cdn.barbora.lt/products/2076c228-8e2d-4b1e-8467-501fbe3dda00_m.png"),
+    Product(
+        productName: "Daim",
+        barcode: "7622200180301",
+        stores:
+            [
+                ProductStoreLink(id: "5", price: 2.13),
+                ProductStoreLink(id: "3", price: 2.20),
+                ProductStoreLink(id: "4", price: 1.16),
+                ProductStoreLink(id: "2", price: 2.17),
+                ProductStoreLink(id: "1", price: 2.80)
+            ],
+        productImage: "https://cdn.barbora.lt/products/09e0e971-0773-4675-8779-51b83beeac86_m.png"),
+    Product(
+        productName: "Nutella B-Ready",
+        barcode: "8000500217078",
+        stores:
+            [
+                ProductStoreLink(id: "5", price: 2.13),
+                ProductStoreLink(id: "3", price: 2.20),
+                ProductStoreLink(id: "4", price: 1.16),
+                ProductStoreLink(id: "2", price: 2.17),
+                ProductStoreLink(id: "1", price: 2.80)
+            ],
+        productImage: "https://cdn.barbora.lt/products/2a7ffb9e-7960-460f-87e8-91c15af05854_s.png"),
+    Product(
+        productName: "Schogetten ",
+        barcode: "4000415143800",
+        stores:
+            [
+                ProductStoreLink(id: "5", price: 2.13),
+                ProductStoreLink(id: "3", price: 2.20),
+                ProductStoreLink(id: "4", price: 1.16),
+                ProductStoreLink(id: "2", price: 2.17),
+                ProductStoreLink(id: "1", price: 2.80)
+            ],
+        productImage: "https://cdn.barbora.lt/products/d1480be1-876f-4e4c-a53f-9c487ade3587_m.png")
+    
+    
+    
+    
+
 ]
